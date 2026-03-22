@@ -1,0 +1,22 @@
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Streamlit
+.streamlit/
+
+# Jupyter
+.ipynb_checkpoints/
