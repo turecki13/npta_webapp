@@ -1,6 +1,9 @@
 """
 Wersja testowa app_1.py z przykładowymi danymi wbudowanymi w kod.
 Uruchom: streamlit run app_test.py
+
+Dodaje tu pewne zmiany zeby sprawdzic polaczenie z gitem
+
 """
 import streamlit as st
 import pandas as pd
