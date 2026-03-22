@@ -49,12 +49,12 @@ events = pd.DataFrame([
 ])
 
 personal_plans = pd.DataFrame([
-    {"participant_name": "Anna Kowalska",     "day_id": "1", "time": "11:00", "court": "Kort 1", "with_players": "Bartek Nowak",      "event_labels": ""},
-    {"participant_name": "Anna Kowalska",     "day_id": "2", "time": "09:00", "court": "Kort 2", "with_players": "Celina Wiśniewska", "event_labels": "Trening z trenerem"},
-    {"participant_name": "Anna Kowalska",     "day_id": "3", "time": "10:00", "court": "Kort 3", "with_players": "Bartek Nowak",      "event_labels": "Turniej – Grupa A"},
-    {"participant_name": "Bartek Nowak",      "day_id": "1", "time": "11:00", "court": "Kort 1", "with_players": "Anna Kowalska",     "event_labels": ""},
-    {"participant_name": "Bartek Nowak",      "day_id": "2", "time": "09:00", "court": "Kort 4", "with_players": "",                  "event_labels": "Trening z trenerem"},
-    {"participant_name": "Celina Wiśniewska", "day_id": "2", "time": "09:00", "court": "Kort 2", "with_players": "Anna Kowalska",     "event_labels": "Trening z trenerem"},
+    {"participant_name": "Anna Kowalska",     "day_id": "1", "time": "11:00", "court": "Kort 1", "with_players": "Bartek Nowak",      "with_coach": "",             "event_labels": ""},
+    {"participant_name": "Anna Kowalska",     "day_id": "2", "time": "09:00", "court": "Kort 2", "with_players": "Celina Wiśniewska", "with_coach": "Trener Marek", "event_labels": "Trening z trenerem"},
+    {"participant_name": "Anna Kowalska",     "day_id": "3", "time": "10:00", "court": "Kort 3", "with_players": "Bartek Nowak",      "with_coach": "",             "event_labels": "Turniej – Grupa A"},
+    {"participant_name": "Bartek Nowak",      "day_id": "1", "time": "11:00", "court": "Kort 1", "with_players": "Anna Kowalska",     "with_coach": "",             "event_labels": ""},
+    {"participant_name": "Bartek Nowak",      "day_id": "2", "time": "09:00", "court": "Kort 4", "with_players": "",                  "with_coach": "Trener Marek", "event_labels": "Trening z trenerem"},
+    {"participant_name": "Celina Wiśniewska", "day_id": "2", "time": "09:00", "court": "Kort 2", "with_players": "Anna Kowalska",     "with_coach": "Trener Marek", "event_labels": "Trening z trenerem"},
 ])
 
 # ---------- PRZETWARZANIE (identyczne jak w app_1.py) ----------
@@ -116,11 +116,14 @@ for _, day in days.iterrows():
             time_val = safe_str(row["time"])
             court_val = safe_str(row["court"])
             with_players = safe_str(row["with_players"])
+            with_coach = safe_str(row["with_coach"])
             event_labels = safe_str(row["event_labels"])
 
             st.success(f"{time_val} | {court_val}")
             if with_players:
                 st.write(f"**Z kim:** {with_players}")
+            if with_coach:
+                st.write(f"**Trener:** {with_coach}")
             if event_labels:
                 st.write(f"**Zapisany na:** {event_labels}")
 

@@ -104,11 +104,14 @@ for _, day in days.iterrows():
             time_val = safe_str(row["time"])
             court_val = safe_str(row["court"])
             with_players = safe_str(row["with_players"])
+            with_coach = safe_str(row["with_coach"])
             event_labels = safe_str(row["event_labels"])
 
             st.success(f"{time_val} | {court_val}")
             if with_players:
                 st.write(f"**Z kim:** {with_players}")
+            if with_coach:
+                st.write(f"**Trener:** {with_coach}")
             if event_labels:
                 st.write(f"**Zapisany na:** {event_labels}")
 
